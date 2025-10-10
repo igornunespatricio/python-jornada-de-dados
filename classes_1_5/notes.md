@@ -1,4 +1,5 @@
-# Pyenv
+# Installing python
+## Pyenv
 
 - Link to check pyenv to enforce correct version of python to be used in projects: https://github.com/pyenv/pyenv?tab=readme-ov-file
 
@@ -24,7 +25,7 @@ cd project1
 pyenv --version
 ```
 
-# Pip + Venv
+## Pip + Venv
 
 - uninstall all packages via pip
 ```bash
@@ -56,7 +57,7 @@ pip install pandas
 rm -r directory_name
 ```
 
-# pipX
+## pipX
 
 - install pipx globally
 ```bash
@@ -68,7 +69,7 @@ pip install pipx
 pipx install poetry ipython
 ```
 
-# Poetry
+## Poetry
 
 - install poetry globaly
 ```bash
@@ -99,3 +100,8 @@ poetry add django pandas streamlit
 ```bash
 poetry remove django
 ```
+
+
+# Notes
+
+- dynamic types: can change variable from integer to string, etc. Python doesn't enforce a type
