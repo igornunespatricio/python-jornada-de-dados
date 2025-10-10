@@ -1,0 +1,4 @@
+name,amount,price,available
+igor,20,40,True
+michel,40,20,False
+rafael,10,32,True
