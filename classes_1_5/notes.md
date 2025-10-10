@@ -104,4 +104,6 @@ poetry remove django
 
 # Notes
 
-- dynamic types: can change variable from integer to string, etc. Python doesn't enforce a type
+- Dynamic typing: Don't need to declare variable types explicitly
+- Strong typing: operations with incompatible types will result in errors instead of implicit conversions
+- Type hint: improves readability of variable types but don't enforce it.
