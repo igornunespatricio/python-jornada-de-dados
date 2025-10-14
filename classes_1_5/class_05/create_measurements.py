@@ -1,10 +1,11 @@
 import os
+from pathlib import Path
 import sys
 import random
 import time
+from config import NUMBER_ROWS_CREATE, STATISTICS_FILE_PATH, CSV_PATH, TXT_PATH
+from utils import write_statistics_to_file
 
-CSV_PATH = r"classes_1_5\class_05\data\weather_stations.csv"
-TXT_PATH = r"classes_1_5\class_05\data\weather_stations.txt"
 
 def check_args(file_args):
     """
@@ -14,7 +15,9 @@ def check_args(file_args):
         if len(file_args) != 2 or int(file_args[1]) <= 0:
             raise Exception()
     except:
-        print("Usage:  create_measurements.sh <positive integer number of records to create>")
+        print(
+            "Usage:  create_measurements.sh <positive integer number of records to create>"
+        )
         print("        You can use underscore notation for large number of records.")
         print("        For example:  1_000_000_000 for one billion")
         exit()
@@ -25,13 +28,13 @@ def build_weather_station_name_list():
     Grabs the weather station names from example data provided in repo and dedups
     """
     station_names = []
-    with open(CSV_PATH, 'r', encoding="utf-8") as file:
+    with open(CSV_PATH, "r", encoding="utf-8") as file:
         file_contents = file.read()
     for station in file_contents.splitlines():
         if "#" in station:
             next
         else:
-            station_names.append(station.split(';')[0])
+            station_names.append(station.split(";")[0])
     return list(set(station_names))
 
 
@@ -39,7 +42,7 @@ def convert_bytes(num):
     """
     Convert bytes to a human-readable format (e.g., KiB, MiB, GiB)
     """
-    for x in ['bytes', 'KiB', 'MiB', 'GiB']:
+    for x in ["bytes", "KiB", "MiB", "GiB"]:
         if num < 1024.0:
             return "%3.1f %s" % (num, x)
         num /= 1024.0
@@ -67,8 +70,8 @@ def estimate_file_size(weather_station_names, num_rows_to_create):
     """
     Tries to estimate how large a file the test data will be
     """
-    max_string = float('-inf')
-    min_string = float('inf')
+    max_string = float("-inf")
+    min_string = float("inf")
     per_record_size = 0
     record_size_unit = "bytes"
 
@@ -93,39 +96,45 @@ def build_test_data(weather_station_names, num_rows_to_create):
     coldest_temp = -99.9
     hottest_temp = 99.9
     station_names_10k_max = random.choices(weather_station_names, k=10_000)
-    batch_size = 10000 # instead of writing line by line to file, process a batch of stations and put it to disk
+    batch_size = 10000  # instead of writing line by line to file, process a batch of stations and put it to disk
     progress_step = max(1, (num_rows_to_create // batch_size) // 100)
-    print('Criando o arquivo... isso vai demorar uns 10 minutos...')
+    print("Criando o arquivo... isso vai demorar uns 10 minutos...")
 
     try:
-        with open(TXT_PATH, 'w', encoding="utf-8") as file:
-            for s in range(0,num_rows_to_create // batch_size):
-                
+        with open(TXT_PATH, "w", encoding="utf-8") as file:
+            for s in range(0, num_rows_to_create // batch_size):
+
                 batch = random.choices(station_names_10k_max, k=batch_size)
-                prepped_deviated_batch = '\n'.join([f"{station};{random.uniform(coldest_temp, hottest_temp):.1f}" for station in batch]) # :.1f should quicker than round on a large scale, because round utilizes mathematical operation
-                file.write(prepped_deviated_batch + '\n')
-                
-        sys.stdout.write('\n')
+                prepped_deviated_batch = "\n".join(
+                    [
+                        f"{station};{random.uniform(coldest_temp, hottest_temp):.1f}"
+                        for station in batch
+                    ]
+                )  # :.1f should quicker than round on a large scale, because round utilizes mathematical operation
+                file.write(prepped_deviated_batch + "\n")
+
+        sys.stdout.write("\n")
     except Exception as e:
         print("Something went wrong. Printing error info and exiting...")
         print(e)
         exit()
-    
+
     end_time = time.time()
     elapsed_time = end_time - start_time
     file_size = os.path.getsize(TXT_PATH)
     human_file_size = convert_bytes(file_size)
- 
+
     print(f"Arquivo escrito com sucesso {TXT_PATH}")
     print(f"Tamanho final:  {human_file_size}")
     print(f"Tempo decorrido: {format_elapsed_time(elapsed_time)}")
+    write_statistics_to_file(__file__, format_elapsed_time(elapsed_time))
 
 
 def main():
     """
     main program function
     """
-    num_rows_to_create = 10_000_000
+    num_rows_to_create = NUMBER_ROWS_CREATE
     weather_station_names = []
     weather_station_names = build_weather_station_name_list()
     print(estimate_file_size(weather_station_names, num_rows_to_create))
@@ -135,4 +144,3 @@ def main():
 
 if __name__ == "__main__":
     main()
-exit()

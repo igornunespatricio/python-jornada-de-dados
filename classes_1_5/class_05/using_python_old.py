@@ -1,8 +1,11 @@
 from csv import reader
 from collections import defaultdict
 import time
-
 from pathlib import Path
+
+from config import TXT_PATH
+from utils import write_statistics_to_file
+
 
 def processar_temperaturas(path_do_txt: Path):
     print("Iniciando o processamento do arquivo.")
@@ -32,8 +35,8 @@ def processar_temperaturas(path_do_txt: Path):
         temperatura_por_station[nome_da_station].append(temperatura)
     """
 
-    with open(path_do_txt, 'r', encoding="utf-8") as file:
-        _reader = reader(file, delimiter=';')
+    with open(path_do_txt, "r", encoding="utf-8") as file:
+        _reader = reader(file, delimiter=";")
         for row in _reader:
             nome_da_station, temperatura = str(row[0]), float(row[1])
             temperatura_por_station[nome_da_station].append(temperatura)
@@ -55,18 +58,21 @@ def processar_temperaturas(path_do_txt: Path):
     sorted_results = dict(sorted(results.items()))
 
     # Formatando os resultados para exibição
-    formatted_results = {station: f"{min_temp:.1f}/{mean_temp:.1f}/{max_temp:.1f}" for station, (min_temp, mean_temp, max_temp) in sorted_results.items()}
+    formatted_results = {
+        station: f"{min_temp:.1f}/{mean_temp:.1f}/{max_temp:.1f}"
+        for station, (min_temp, mean_temp, max_temp) in sorted_results.items()
+    }
 
     end_time = time.time()  # Tempo de término
     print(f"Processamento concluído em {end_time - start_time:.2f} segundos.")
-
+    write_statistics_to_file(__file__, end_time - start_time)
     return formatted_results
+
+
+def main():
+    return processar_temperaturas(TXT_PATH)
+
 
 # Substitua "data/measurements10M.txt" pelo caminho correto do seu arquivo
 if __name__ == "__main__":
-
-    # 1M 0.38 segundos
-    # 10M 3.96 segundos.
-    path_do_txt: Path = Path("data/measurements.txt")
-    # 100M > 5 minutos.
-    resultados = processar_temperaturas(path_do_txt)
+    main()
