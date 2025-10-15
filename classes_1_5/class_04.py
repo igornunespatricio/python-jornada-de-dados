@@ -1,4 +1,3 @@
-
 # TYPE HINT
 
 # age: int = 30

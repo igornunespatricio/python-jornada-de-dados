@@ -1,8 +1,9 @@
 """Functions to do the ETL."""
 
-import pandas as pd
-import os
 import glob
+import os
+
+import pandas as pd
 
 
 def extract_data(path: str) -> pd.DataFrame:

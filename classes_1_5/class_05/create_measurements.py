@@ -55,16 +55,14 @@ def format_elapsed_time(seconds):
     """
     if seconds < 60:
         return f"{seconds:.3f} seconds"
-    elif seconds < 3600:
+    if seconds < 3600:
         minutes, seconds = divmod(seconds, 60)
         return f"{int(minutes)} minutes {int(seconds)} seconds"
-    else:
-        hours, remainder = divmod(seconds, 3600)
-        minutes, seconds = divmod(remainder, 60)
-        if minutes == 0:
-            return f"{int(hours)} hours {int(seconds)} seconds"
-        else:
-            return f"{int(hours)} hours {int(minutes)} minutes {int(seconds)} seconds"
+    hours, remainder = divmod(seconds, 3600)
+    minutes, seconds = divmod(remainder, 60)
+    if minutes == 0:
+        return f"{int(hours)} hours {int(seconds)} seconds"
+    return f"{int(hours)} hours {int(minutes)} minutes {int(seconds)} seconds"
 
 
 def estimate_file_size(weather_station_names, num_rows_to_create):
@@ -101,7 +99,7 @@ def build_test_data(weather_station_names, num_rows_to_create):
 
     try:
         with open(TXT_PATH, "w", encoding="utf-8") as file:
-            for s in range(0, num_rows_to_create // batch_size):
+            for s in range(num_rows_to_create // batch_size):
 
                 batch = random.choices(station_names_10k_max, k=batch_size)
                 prepped_deviated_batch = "\n".join(
