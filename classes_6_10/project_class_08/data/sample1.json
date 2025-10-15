@@ -1,0 +1,72 @@
+[
+  {
+    "product": "Laptop",
+    "category": "Electronics",
+    "quantity": 5,
+    "amount": 899.99,
+    "date": "2024-01-15"
+  },
+  {
+    "product": "Office Chair",
+    "category": "Furniture",
+    "quantity": 12,
+    "amount": 249.50,
+    "date": "2024-01-16"
+  },
+  {
+    "product": "Wireless Mouse",
+    "category": "Electronics",
+    "quantity": 25,
+    "amount": 29.99,
+    "date": "2024-01-17"
+  },
+  {
+    "product": "Notebook",
+    "category": "Stationery",
+    "quantity": 100,
+    "amount": 4.99,
+    "date": "2024-01-18"
+  },
+  {
+    "product": "Desk Lamp",
+    "category": "Furniture",
+    "quantity": 8,
+    "amount": 45.75,
+    "date": "2024-01-19"
+  },
+  {
+    "product": "Smartphone",
+    "category": "Electronics",
+    "quantity": 15,
+    "amount": 699.99,
+    "date": "2024-01-20"
+  },
+  {
+    "product": "Stapler",
+    "category": "Stationery",
+    "quantity": 50,
+    "amount": 12.50,
+    "date": "2024-01-21"
+  },
+  {
+    "product": "Monitor",
+    "category": "Electronics",
+    "quantity": 7,
+    "amount": 349.99,
+    "date": "2024-01-22"
+  },
+  {
+    "product": "Filing Cabinet",
+    "category": "Furniture",
+    "quantity": 3,
+    "amount": 189.00,
+    "date": "2024-01-23"
+  },
+  {
+    "product": "Ballpoint Pens",
+    "category": "Stationery",
+    "quantity": 200,
+    "amount": 0.99,
+    "date": "2024-01-24"
+  }
+]
