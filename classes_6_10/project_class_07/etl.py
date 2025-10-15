@@ -26,6 +26,3 @@ def sum_prices(list_of_products: list[dict]) -> float:
     for product in list_of_products:
         total += float(product.get("price"))
     return total
-
-
-print("hello")
