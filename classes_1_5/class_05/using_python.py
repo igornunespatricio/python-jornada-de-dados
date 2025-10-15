@@ -1,9 +1,9 @@
-from csv import reader
-from collections import defaultdict, Counter
-from tqdm import tqdm  # barra de progresso
 import time
+from collections import Counter, defaultdict
+from csv import reader
 
 from config import NUMBER_ROWS_CREATE, TXT_PATH
+from tqdm import tqdm  # barra de progresso
 from utils import write_statistics_to_file
 
 

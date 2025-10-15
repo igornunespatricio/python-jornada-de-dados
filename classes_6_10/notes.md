@@ -4,6 +4,6 @@ Run checks like code formatting, style enforcement, and syntax validation to ens
 
 - black - code formatter
 - flake8 - code quality
-- isort -
+- isort - sort imports
 - bandit - for security
 - commitizen - for commit messages

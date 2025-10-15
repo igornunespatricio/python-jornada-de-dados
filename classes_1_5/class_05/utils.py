@@ -1,4 +1,5 @@
 import os
+
 from config import STATISTICS_FILE_PATH
 
 
