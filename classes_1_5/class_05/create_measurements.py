@@ -1,9 +1,8 @@
 import os
-from pathlib import Path
 import sys
 import random
 import time
-from config import NUMBER_ROWS_CREATE, STATISTICS_FILE_PATH, CSV_PATH, TXT_PATH
+from config import NUMBER_ROWS_CREATE, CSV_PATH, TXT_PATH
 from utils import write_statistics_to_file
 
 
@@ -73,7 +72,6 @@ def estimate_file_size(weather_station_names, num_rows_to_create):
     max_string = float("-inf")
     min_string = float("inf")
     per_record_size = 0
-    record_size_unit = "bytes"
 
     for station in weather_station_names:
         if len(station) > max_string:
@@ -97,7 +95,7 @@ def build_test_data(weather_station_names, num_rows_to_create):
     hottest_temp = 99.9
     station_names_10k_max = random.choices(weather_station_names, k=10_000)
     batch_size = 10000  # instead of writing line by line to file, process a batch of stations and put it to disk
-    progress_step = max(1, (num_rows_to_create // batch_size) // 100)
+    max(1, (num_rows_to_create // batch_size) // 100)
     print("Criando o arquivo... isso vai demorar uns 10 minutos...")
 
     try:

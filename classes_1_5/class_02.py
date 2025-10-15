@@ -1,6 +1,6 @@
 # OPERATIONS
 
-name = 'Igor_Nunes'
+name = "Igor_Nunes"
 
 upper_name = name.upper()
 print(upper_name)

@@ -49,7 +49,7 @@ def main():
     print("Iniciando o processamento do arquivo.")
     start_time = time.time()  # Tempo de início
 
-    resultados = processar_temperaturas(TXT_PATH)
+    processar_temperaturas(TXT_PATH)
 
     end_time = time.time()  # Tempo de término
 
