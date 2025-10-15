@@ -1,3 +1,6 @@
+"""Codes for class 07."""
+
+
 def addition(value: float, other_value: float) -> float:
     """Add two values."""
     return value + other_value

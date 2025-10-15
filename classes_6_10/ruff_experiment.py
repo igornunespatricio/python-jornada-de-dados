@@ -1,3 +1,5 @@
+"""Experiment with Ruff."""
+
 import os
 import sys
 
