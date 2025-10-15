@@ -17,7 +17,7 @@ def write_statistics_to_file(
 
 def print_statistics_file():
     print("\nStatistics:")
-    with open(STATISTICS_FILE_PATH, "r", encoding="utf-8") as file:
+    with open(STATISTICS_FILE_PATH, encoding="utf-8") as file:
         print(file.read())
 
 

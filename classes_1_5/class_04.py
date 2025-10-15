@@ -1,4 +1,3 @@
-from typing import List
 
 # TYPE HINT
 
@@ -79,8 +78,8 @@ from typing import List
 # FUNCTIONS
 
 
-def order_list(numbers: List[float]) -> List[float]:
-    ordered_numbers: List[float] = numbers.copy()
+def order_list(numbers: list[float]) -> list[float]:
+    ordered_numbers: list[float] = numbers.copy()
     for i in range(len(ordered_numbers)):
         for j in range(i + 1, len(ordered_numbers)):
             if ordered_numbers[i] > ordered_numbers[j]:

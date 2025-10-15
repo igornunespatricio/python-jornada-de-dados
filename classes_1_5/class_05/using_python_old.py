@@ -36,7 +36,7 @@ def processar_temperaturas(path_do_txt: Path):
         temperatura_por_station[nome_da_station].append(temperatura)
     """
 
-    with open(path_do_txt, "r", encoding="utf-8") as file:
+    with open(path_do_txt, encoding="utf-8") as file:
         _reader = reader(file, delimiter=";")
         for row in _reader:
             nome_da_station, temperatura = str(row[0]), float(row[1])

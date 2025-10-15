@@ -17,7 +17,7 @@ def check_args(file_args):
     except Exception:
         print(
             "Usage:  create_measurements.sh <positive "
-            "integer number of records to create>"
+            "integer number of records to create>",
         )
         print("        You can use underscore notation for large number of records.")
         print("        For example:  1_000_000_000 for one billion")
@@ -29,7 +29,7 @@ def build_weather_station_name_list():
     Grabs the weather station names from example data provided in repo and dedups
     """
     station_names = []
-    with open(CSV_PATH, "r", encoding="utf-8") as file:
+    with open(CSV_PATH, encoding="utf-8") as file:
         file_contents = file.read()
     for station in file_contents.splitlines():
         if "#" in station:
@@ -76,10 +76,8 @@ def estimate_file_size(weather_station_names, num_rows_to_create):
     per_record_size = 0
 
     for station in weather_station_names:
-        if len(station) > max_string:
-            max_string = len(station)
-        if len(station) < min_string:
-            min_string = len(station)
+        max_string = max(max_string, len(station))
+        min_string = min(min_string, len(station))
         per_record_size = ((max_string + min_string * 2) + len(",-123.4")) / 2
 
     total_file_size = num_rows_to_create * per_record_size
@@ -110,7 +108,7 @@ def build_test_data(weather_station_names, num_rows_to_create):
                     [
                         f"{station};{random.uniform(coldest_temp, hottest_temp):.1f}"
                         for station in batch
-                    ]
+                    ],
                 )  # :.1f should quicker than round on a large scale
                 file.write(prepped_deviated_batch + "\n")
 
