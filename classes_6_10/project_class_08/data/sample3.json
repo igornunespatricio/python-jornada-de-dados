@@ -1,0 +1,107 @@
+[
+  {
+    "product": "Organic Apples",
+    "category": "Groceries",
+    "quantity": 150,
+    "amount": 3.99,
+    "date": "2024-03-01"
+  },
+  {
+    "product": "Garden Hose",
+    "category": "Home & Garden",
+    "quantity": 10,
+    "amount": 34.50,
+    "date": "2024-03-02"
+  },
+  {
+    "product": "Novel - Mystery",
+    "category": "Books",
+    "quantity": 25,
+    "amount": 14.99,
+    "date": "2024-03-03"
+  },
+  {
+    "product": "LED Light Bulbs",
+    "category": "Home Improvement",
+    "quantity": 100,
+    "amount": 8.99,
+    "date": "2024-03-04"
+  },
+  {
+    "product": "Baby Diapers",
+    "category": "Baby Care",
+    "quantity": 45,
+    "amount": 29.99,
+    "date": "2024-03-05"
+  },
+  {
+    "product": "Car Phone Mount",
+    "category": "Automotive",
+    "quantity": 30,
+    "amount": 19.95,
+    "date": "2024-03-06"
+  },
+  {
+    "product": "Face Cream",
+    "category": "Beauty",
+    "quantity": 60,
+    "amount": 24.75,
+    "date": "2024-03-07"
+  },
+  {
+    "product": "Dog Food",
+    "category": "Pet Supplies",
+    "quantity": 40,
+    "amount": 49.99,
+    "date": "2024-03-08"
+  },
+  {
+    "product": "Board Game",
+    "category": "Toys & Games",
+    "quantity": 18,
+    "amount": 39.99,
+    "date": "2024-03-09"
+  },
+  {
+    "product": "Sunglasses",
+    "category": "Fashion",
+    "quantity": 35,
+    "amount": 79.99,
+    "date": "2024-03-10"
+  },
+  {
+    "product": "Power Bank",
+    "category": "Electronics",
+    "quantity": 28,
+    "amount": 45.00,
+    "date": "2024-03-11"
+  },
+  {
+    "product": "Yoga Pants",
+    "category": "Activewear",
+    "quantity": 55,
+    "amount": 34.99,
+    "date": "2024-03-12"
+  },
+  {
+    "product": "Coffee Beans",
+    "category": "Beverages",
+    "quantity": 75,
+    "amount": 12.99,
+    "date": "2024-03-13"
+  },
+  {
+    "product": "Screwdriver Set",
+    "category": "Tools",
+    "quantity": 15,
+    "amount": 27.50,
+    "date": "2024-03-14"
+  },
+  {
+    "product": "Bath Towels",
+    "category": "Home Textiles",
+    "quantity": 65,
+    "amount": 18.99,
+    "date": "2024-03-15"
+  }
+]

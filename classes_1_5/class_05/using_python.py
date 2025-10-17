@@ -1,9 +1,9 @@
-from csv import reader
-from collections import defaultdict, Counter
-from tqdm import tqdm  # barra de progresso
 import time
+from collections import Counter, defaultdict
+from csv import reader
 
 from config import NUMBER_ROWS_CREATE, TXT_PATH
+from tqdm import tqdm  # barra de progresso
 from utils import write_statistics_to_file
 
 
@@ -14,7 +14,7 @@ def processar_temperaturas(path_do_csv):
     somas = defaultdict(float)
     medicoes = Counter()
 
-    with open(path_do_csv, "r") as file:
+    with open(path_do_csv) as file:
         _reader = reader(file, delimiter=";")
         # usando tqdm diretamente no iterador, isso mostrará a porcentagem de conclusão.
         for row in tqdm(_reader, total=NUMBER_ROWS_CREATE, desc="Processando"):
@@ -49,7 +49,7 @@ def main():
     print("Iniciando o processamento do arquivo.")
     start_time = time.time()  # Tempo de início
 
-    resultados = processar_temperaturas(TXT_PATH)
+    processar_temperaturas(TXT_PATH)
 
     end_time = time.time()  # Tempo de término
 

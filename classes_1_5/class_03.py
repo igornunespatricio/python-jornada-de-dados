@@ -64,9 +64,9 @@ FIXED_BONUS = 1000
 
 valid_name = False
 while valid_name is False:
-    name = 'Igor'
+    name = "Igor"
     if name.isdigit():
-        print("Name is number.")        
+        print("Name is number.")
     elif len(name.strip()) == 0:
         print("No name was passed.")
     else:
@@ -78,7 +78,7 @@ while valid_salary is False:
     try:
         salary = float(salary)
         valid_salary = True
-    except Exception as e:
+    except Exception:
         print("Salary is not a valid number")
 
 valid_bonus = False
@@ -87,8 +87,8 @@ while valid_bonus is False:
     try:
         bonus_pct = float(bonus_pct)
         valid_bonus = True
-    except Exception as e:
+    except Exception:
         print("Bonus is not a valid number")
-    
+
 final_bonus = FIXED_BONUS + (salary * bonus_pct)
 print(f"The final bonus for {name} is {final_bonus}")

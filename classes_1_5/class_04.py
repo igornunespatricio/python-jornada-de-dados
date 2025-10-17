@@ -1,7 +1,3 @@
-from typing import Dict, Union, Optional, Any, List
-import json
-import csv
-
 # TYPE HINT
 
 # age: int = 30
@@ -80,17 +76,22 @@ import csv
 
 # FUNCTIONS
 
-def order_list(numbers: List[float]) -> List[float]:
-    ordered_numbers: List[float] = numbers.copy()
+
+def order_list(numbers: list[float]) -> list[float]:
+    ordered_numbers: list[float] = numbers.copy()
     for i in range(len(ordered_numbers)):
-        for j in range(i+1, len(ordered_numbers)):
+        for j in range(i + 1, len(ordered_numbers)):
             if ordered_numbers[i] > ordered_numbers[j]:
-                ordered_numbers[i], ordered_numbers[j] = ordered_numbers[j], ordered_numbers[i]
+                ordered_numbers[i], ordered_numbers[j] = (
+                    ordered_numbers[j],
+                    ordered_numbers[i],
+                )
     return ordered_numbers
 
-numbers = [1,4,2,8,4,2,1]
-print(order_list([1,4,2,8,4,2,1]))
+
+numbers = [1, 4, 2, 8, 4, 2, 1]
+print(order_list([1, 4, 2, 8, 4, 2, 1]))
 numbers.sort()
 print(numbers)
 
-print('finished code')
+print("finished code")

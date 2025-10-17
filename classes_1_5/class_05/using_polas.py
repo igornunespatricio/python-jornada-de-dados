@@ -1,5 +1,4 @@
 import polars as pl
-
 from config import TXT_PATH
 from utils import write_statistics_to_file
 

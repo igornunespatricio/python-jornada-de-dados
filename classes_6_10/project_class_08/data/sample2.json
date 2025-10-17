@@ -1,0 +1,86 @@
+[
+  {
+    "product": "Running Shoes",
+    "category": "Footwear",
+    "quantity": 20,
+    "amount": 129.99,
+    "date": "2024-02-01"
+  },
+  {
+    "product": "Coffee Maker",
+    "category": "Appliances",
+    "quantity": 8,
+    "amount": 79.95,
+    "date": "2024-02-02"
+  },
+  {
+    "product": "Yoga Mat",
+    "category": "Fitness",
+    "quantity": 35,
+    "amount": 24.50,
+    "date": "2024-02-03"
+  },
+  {
+    "product": "Bluetooth Speaker",
+    "category": "Electronics",
+    "quantity": 15,
+    "amount": 89.99,
+    "date": "2024-02-04"
+  },
+  {
+    "product": "Winter Jacket",
+    "category": "Clothing",
+    "quantity": 12,
+    "amount": 149.99,
+    "date": "2024-02-05"
+  },
+  {
+    "product": "Cookware Set",
+    "category": "Kitchen",
+    "quantity": 6,
+    "amount": 199.00,
+    "date": "2024-02-06"
+  },
+  {
+    "product": "Gaming Headset",
+    "category": "Electronics",
+    "quantity": 18,
+    "amount": 69.99,
+    "date": "2024-02-07"
+  },
+  {
+    "product": "Backpack",
+    "category": "Accessories",
+    "quantity": 25,
+    "amount": 49.95,
+    "date": "2024-02-08"
+  },
+  {
+    "product": "Fitness Tracker",
+    "category": "Wearables",
+    "quantity": 30,
+    "amount": 59.99,
+    "date": "2024-02-09"
+  },
+  {
+    "product": "Desk Organizer",
+    "category": "Office Supplies",
+    "quantity": 40,
+    "amount": 19.99,
+    "date": "2024-02-10"
+  },
+  {
+    "product": "Wireless Earbuds",
+    "category": "Electronics",
+    "quantity": 22,
+    "amount": 129.00,
+    "date": "2024-02-11"
+  },
+  {
+    "product": "Water Bottle",
+    "category": "Fitness",
+    "quantity": 60,
+    "amount": 14.99,
+    "date": "2024-02-12"
+  }
+]
