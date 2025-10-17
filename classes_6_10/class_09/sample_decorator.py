@@ -1,6 +1,4 @@
-from functools import wraps
 import time
-
 from functools import wraps
 
 
@@ -24,7 +22,9 @@ def timer_decorator(func):
         result = func(*args, **kwargs)
         end_time = time.time()
         print(
-            f"Function {func.__name__} took {end_time - start_time} seconds to execute."
+            f"""Function {func.__name__} took
+            {end_time - start_time} seconds to execute.
+            """,
         )
         return result
 

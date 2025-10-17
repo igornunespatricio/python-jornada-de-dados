@@ -1,5 +1,6 @@
-from loguru import logger
 from sys import stderr
+
+from loguru import logger
 
 LOG_DIR = "classes_6_10/class_09/"
 

@@ -1,5 +1,6 @@
-from loguru import logger
 from functools import wraps
+
+from loguru import logger
 
 LOG_DIR = "classes_6_10/class_09/project_class_09/"
 
@@ -23,7 +24,7 @@ def log_decorator(func):
     def wrapper(*args, **kwargs):
         """Wrapper function to log function calls and exceptions."""
         logger.info(
-            f"Calling function {func.__name__} with args {args} and kwargs {kwargs}"
+            f"Calling function {func.__name__} with args {args} and kwargs {kwargs}",
         )
         try:
             result = func(*args, **kwargs)

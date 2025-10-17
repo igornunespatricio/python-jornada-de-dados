@@ -47,9 +47,11 @@ def consolidated_etl(
     Parameters
     ----------
     data_path : str, optional
-        The path to the data directory. Defaults to "classes_6_10/project_class_08/data".
+        The path to the data directory.
+        Defaults to "classes_6_10/project_class_08/data".
     output_file_format : str, optional
-        The format of the output file. Can be "csv", "parquet" or "both". Defaults to "parquet".
+        The format of the output file.
+        Can be "csv", "parquet" or "both". Defaults to "parquet".
 
     Returns
     -------
