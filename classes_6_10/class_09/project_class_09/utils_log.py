@@ -1,14 +1,16 @@
 from loguru import logger
 from functools import wraps
 
+LOG_DIR = "classes_6_10/class_09/project_class_09/"
+
 logger.add(
-    sink="classes_6_10/project_class_09/log.log",
+    sink=LOG_DIR + "log.log",
     format="{time} {level} {file} {message}",
     level="INFO",
 )
 
 logger.add(
-    sink="classes_6_10/project_class_09/critical.log",
+    sink=LOG_DIR + "critical.log",
     format="{time} {level} {file} {message}",
     level="ERROR",
 )

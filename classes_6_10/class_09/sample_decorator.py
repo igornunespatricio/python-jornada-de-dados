@@ -29,3 +29,30 @@ def timer_decorator(func):
         return result
 
     return wrapper
+
+
+def repeat(num_times):
+    """Decorator to repeat a function multiple times."""
+    print(f"repeat decorator {num_times} times")
+
+    def decorator_repeat(func):
+        def wrapper(*args, **kwargs):
+            for _ in range(num_times):
+                result = func(*args, **kwargs)
+            return result
+
+        return wrapper
+
+    return decorator_repeat
+
+
+def singleton(cls):
+    """Decorator to make a class a singleton."""
+    instances = {}
+
+    def wrapper(*args, **kwargs):
+        if cls not in instances:
+            instances[cls] = cls(*args, **kwargs)
+        return instances[cls]
+
+    return wrapper

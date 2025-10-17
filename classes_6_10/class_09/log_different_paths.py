@@ -40,3 +40,5 @@ addition(3, 4)
 addition(3, "4")
 
 addition(3, "test")
+
+logger.warning("Finishing execution and  logging as warning.")

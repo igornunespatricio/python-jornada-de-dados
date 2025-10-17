@@ -43,7 +43,7 @@ def load_data(
 
 @log_decorator
 def consolidated_etl(
-    data_path: str = "classes_6_10/project_class_09/data",
+    data_path: str,
     output_file_format: str = "parquet",
 ):
     """
@@ -61,13 +61,13 @@ def consolidated_etl(
     None
 
     """
-    raw_data = extract_data("classes_6_10/project_class_09/data")
+    raw_data = extract_data(data_path)
     transformed_data = calculate_total_amount(raw_data)
     load_data(transformed_data, data_path, output_file_format)
 
 
 if __name__ == "__main__":
-    data_path: str = "classes_6_10/project_class_09/data"
+    data_path: str = "classes_6_10/class_09/project_class_09/data"
     raw_data = extract_data(data_path)
     transformed_data = calculate_total_amount(raw_data)
     output_file_format: str = "parquet"  # or "csv" or "both"
