@@ -1,13 +1,13 @@
 from interface.classes.csv_class import CsvProcessor
 
 
-CSV_PATH = "classes_11_15/example.csv"
+CSV_PATH = "classes_11_15/class_12/example.csv"
 STATE = "CA"
 COLUMN_NAME = "state"
 SUB_FILTER_COLUMN = "price"
 PRICE = 199.99
 
-CSV_PATH_2 = "classes_11_15/example_2.csv"
+CSV_PATH_2 = "classes_11_15/class_12/example_2.csv"
 STATE_2 = "RJ"
 COLUMN_NAME_2 = "state"
 SUB_FILTER_COLUMN_2 = "price"
