@@ -29,3 +29,7 @@ Multiple Instances
 Classes make it easy to create multiple independent instances.
 
 UML - class and object diagram documentation - tools can automate this documentation
+
+Abstract method decorator from ABC module is used to enforce methods are implemented in child classes. If methods are not implemented, an error is thrown.
+
+Read Fluent Python book
