@@ -17,6 +17,7 @@ dependencies = [
     "schedule (>=1.2.2,<2.0.0)",
     "fastapi[standard] (>=0.119.1,<0.120.0)",
     "faker (>=37.11.0,<38.0.0)",
+    "sqlmodel (>=0.0.27,<0.0.28)",
 ]
 
 
