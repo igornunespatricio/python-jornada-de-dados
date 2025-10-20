@@ -29,3 +29,7 @@ ORM: each class is a table in the database, each object is a row in the database
 ```python
 Base = declarative_base()
 ```
+
+# Multi or Mono repo
+
+[Read this discussion](https://www.thoughtworks.com/en-br/insights/blog/agile-engineering-practices/monorepo-vs-multirepo)
