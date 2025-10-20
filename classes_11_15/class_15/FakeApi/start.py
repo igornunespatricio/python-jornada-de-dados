@@ -7,13 +7,6 @@ import random
 app = FastAPI(debug=True)
 fake = Faker()
 
-file_name = "data/products.csv"
-df = pd.read_csv(file_name)
-df["indice"] = range(1, len(df) + 1)
-df.set_index("indice", inplace=True)
-
-lojapadraoonline = 11
-
 
 @app.get("/")
 async def hello_world():
@@ -22,17 +15,15 @@ async def hello_world():
 
 @app.get("/gerar_compra")
 async def gerar_compra():
-    index = random.randint(1, len(df) - 1)
-    tuple = df.iloc[index]
     return [
         {
             "client": fake.name(),
             "creditcard": fake.credit_card_provider(),
-            "product": tuple["Product Name"],
-            "ean": int(tuple["EAN"]),
-            "price": round(float(tuple["Price"]) * 1.2, 2),
+            "product": fake.word().title() + " " + fake.word().title(),
+            "ean": fake.random_int(min=1000, max=9999),
+            "price": fake.pydecimal(left_digits=3, right_digits=2, positive=True),
             "clientPosition": fake.location_on_land(),
-            "store": lojapadraoonline,
+            "store": fake.random_int(min=1, max=10),
             "dateTime": fake.iso8601(),
         }
     ]
@@ -47,16 +38,14 @@ async def gerar_compra(numero_registro: int):
     respostas = []
     for _ in range(numero_registro):
         try:
-            index = random.randint(1, len(df) - 1)
-            tuple = df.iloc[index]
             compra = {
                 "client": fake.name(),
                 "creditcard": fake.credit_card_provider(),
-                "product": tuple["Product Name"],
-                "ean": int(tuple["EAN"]),
-                "price": round(float(tuple["Price"]) * 1.2, 2),
+                "product": fake.word().title() + " " + fake.word().title(),
+                "ean": fake.random_int(min=1000, max=9999),
+                "price": fake.pydecimal(left_digits=3, right_digits=2, positive=True),
                 "clientPosition": fake.location_on_land(),
-                "store": lojapadraoonline,
+                "store": fake.random_int(min=1, max=10),
                 "dateTime": fake.iso8601(),
             }
             respostas.append(compra)
@@ -71,7 +60,7 @@ async def gerar_compra(numero_registro: int):
                 "ean": 0,
                 "price": 0.0,
                 "clientPosition": fake.location_on_land(),
-                "store": lojapadraoonline,
+                "store": fake.random_int(min=1, max=10),
                 "dateTime": fake.iso8601(),
             }
             respostas.append(compra)
