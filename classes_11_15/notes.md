@@ -33,3 +33,5 @@ UML - class and object diagram documentation - tools can automate this documenta
 Abstract method decorator from ABC module is used to enforce methods are implemented in child classes. If methods are not implemented, an error is thrown.
 
 Read Fluent Python book
+
+Use Fake class to generate random data
