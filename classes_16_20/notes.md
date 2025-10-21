@@ -33,3 +33,9 @@ Base = declarative_base()
 # Multi or Mono repo
 
 [Read this discussion](https://www.thoughtworks.com/en-br/insights/blog/agile-engineering-practices/monorepo-vs-multirepo)
+
+# API
+
+[Free apis here](https://rapidapi.com/collection/list-of-free-apis)
+
+MVC - model, view, controller
