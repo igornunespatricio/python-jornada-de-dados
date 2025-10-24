@@ -25,6 +25,16 @@ def get_products(db: Session):
 
 
 def create_product(db: Session, product: ProductCreate):
+    """
+    Creates a new product in the database.
+
+    Args:
+        db (Session): a session to the database
+        product (ProductCreate): the product to be created
+
+    Returns:
+        ProductModel: the newly created product
+    """
     db_product = ProductModel(**product.model_dump())
     db.add(db_product)
     db.commit()
@@ -33,13 +43,36 @@ def create_product(db: Session, product: ProductCreate):
 
 
 def delete_product(db: Session, product_id: int):
+    """
+    Deletes a product by its id.
+
+    Args:
+        db (Session): a session to the database
+        product_id (int): the id of the product to delete
+
+    Returns:
+        ProductModel: the deleted product, or None if it doesn't exist
+    """
     db_product = db.query(ProductModel).filter(ProductModel.id == product_id).first()
+    if db_product is None:
+        return None
     db.delete(db_product)
     db.commit()
     return db_product
 
 
 def update_product(db: Session, product_id: int, product: ProductUpdate):
+    """
+    Updates a product by its id.
+
+    Args:
+        db (Session): a session to the database
+        product_id (int): the id of the product to update
+        product (ProductUpdate): the product to update with
+
+    Returns:
+        ProductModel: the updated product, or None if it doesn't exist
+    """
     db_product = db.query(ProductModel).filter(ProductModel.id == product_id).first()
 
     if db_product is None:
