@@ -90,6 +90,20 @@ def detele_product_route(product_id: int, db: Session = Depends(get_db)):
 def update_product_route(
     product_id: int, product: ProductUpdate, db: Session = Depends(get_db)
 ):
+    """
+    Updates a product by its id.
+
+    Args:
+        product_id (int): The id of the product to update
+        product (ProductUpdate): The product to update with
+        db (Session): A session to the database
+
+    Returns:
+        ProductResponse: The updated product
+
+    Raises:
+        HTTPException: If the product with the given id doesn't exist
+    """
     db_product = update_product(db, product_id=product_id, product=product)
     if db_product is None:
         raise HTTPException(status_code=404, detail="Product not found")

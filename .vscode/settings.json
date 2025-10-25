@@ -5,10 +5,8 @@
             "previewLimit": 50,
             "server": "localhost",
             "driver": "PostgreSQL",
-            "name": "test",
-            "database": "mydatabase",
-            "username": "user",
-            "connectString": "postgresql://user:password@localhost:5432/mydatabase"
+            "connectString": "postgresql://user:password@localhost:5432/mydatabase",
+            "name": "test"
         }
     ]
 }
